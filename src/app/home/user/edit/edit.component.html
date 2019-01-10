@@ -1,0 +1,131 @@
+<ng-container *ngIf="!ui.hasError">
+    <div class="card" *blockUI="'ui'">
+        <div class="card-content collapse show">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="form-body">
+                            <form class="form" [formGroup]="userForm" (submit)="updateUser()">
+                                <h4 class="form-section">
+                                    <i class="feather icon-user"></i> User Info
+                                </h4>
+                               
+                                <div class="row">
+                                        <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="projectinput1"> Email</label>
+                                                    <input type="text"
+                                                           id="projectinput1"
+                                                           class="form-control"
+                                                           placeholder="Email"
+                                                           formControlName="email">
+                                                    <form-error-msg controlName="email"></form-error-msg>
+                                                </div>
+                                            </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="projectinput2">First Name</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="First Name"
+                                                   formControlName="first_name">
+                                            <form-error-msg controlName="first_name"></form-error-msg>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="projectinput3">Last Name</label>
+                                            <input type="text"
+                                                   id="projectinput3"
+                                                   class="form-control"
+                                                   placeholder="Last Name"
+                                                   formControlName="last_name">
+                                            <form-error-msg controlName="last_name"></form-error-msg>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <div class="form-group">
+                                            <input type="checkbox"
+                                                   id="active"
+                                                   class="chk-remember" icheck
+                                                   formControlName="is_active">
+                                            <label for="active" style="padding-left: 5px">
+                                                Enable
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3 text-right">
+                                        <button type="submit"
+                                                class="btn btn-primary"
+                                                [ladda]="ui.laddaUser">
+                                            <i class="la la-save"></i> Update
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form" [formGroup]="pwdForm" (submit)="updatePassword()">
+                                <h4 class="form-section pt-1 mb-0">
+                                    <i class="la la-asterisk"></i> Authentication
+                                </h4>
+
+                                <div class="mb-2">
+                                    <small class="text-muted">
+                                        Password must contain at least 8 characters containing
+                                        alphabets, numbers and special characters.
+                                    </small>
+                                </div>
+
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="form-group">
+                                            <label for="password">New Password</label>
+                                            <input type="password"
+                                                   id="password"
+                                                   class="form-control"
+                                                   placeholder="Password"
+                                                   formControlName="new_password"
+                                                   autocomplete="current-password">
+                                            <form-error-msg controlName="new_password"></form-error-msg>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="form-group">
+                                            <label for="c-password">Confirm password</label>
+                                            <input type="password"
+                                                   id="c-password"
+                                                   class="form-control"
+                                                   placeholder="Confirm password"
+                                                   formControlName="confirm_password">
+                                            <form-error-msg controlName="confirm_password"
+                                                            [message]="{fieldMatchValidator: 'Confirm password does not match with the password'}">
+                                            </form-error-msg>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="la la-unlock-alt"></i> Change password
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<alert type="danger" *ngIf="ui.hasError">
+    <strong>Opps!</strong> Error while loading user info. Please refresh the page to try again.
+</alert>

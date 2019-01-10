@@ -1,0 +1,386 @@
+<ng-container *ngIf="!ui.hasError">
+    <div class="card" *blockUI="'ui'">
+        <div class="card-content collapse show">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-body">
+                            <form class="form" [formGroup]="userForm" (submit)="updateUser()">
+                                <h4 class="form-section">
+                                    <i class="feather icon-user"></i> Employee Info
+                                </h4>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput1">First Name</label>
+                                            <input type="text"
+                                                   id="projectinput1"
+                                                   class="form-control"
+                                                   placeholder="First Name"
+                                                   formControlName="first_name">
+                                            <form-error-msg controlName="first_name"></form-error-msg>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Middle Name</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Middle Name"
+                                                   formControlName="middle_name">
+                                            <form-error-msg controlName="middle_name"></form-error-msg>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Last Name</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Last Name"
+                                                   formControlName="last_name">
+                                            <form-error-msg controlName="last_name"></form-error-msg>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 ">
+                                        <div class="hrline">
+                                        </div>
+                                     </div>
+                                     <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Hire Date</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   
+                                                   formControlName="hire_date">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Rehire Date</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   
+                                                   formControlName="rehire_date">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Termination Date</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   
+                                                   formControlName="termination_date">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">User Account Deactivation Date</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="User Account Deactivation Date"
+                                                   formControlName="user_account_deactivation_date">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Annual Salary</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Annual Salary"
+                                                   formControlName="annual_salary">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Cost Code</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Cost Code"
+                                                   formControlName="cost_code">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Department</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Department"
+                                                   formControlName="department">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Eeo Class</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Eeo Class"
+                                                   formControlName="eeo_class">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Employment Type</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Employment Type"
+                                                   formControlName="employment_type">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Is Supervisor Reviewer</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Is Supervisor Reviewer"
+                                                   formControlName="is_supervisor_reviewer">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Position</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Position"
+                                                   formControlName="position">
+                                            <!-- <form-error-msg controlName="hire_date"></form-error-msg> -->
+                                        </div>
+                                      </div>
+
+                                    
+                             
+                                   
+                                    <div class="col-12 ">
+                                        <div class="hrline">
+                                        </div>
+                                     </div>
+                                     <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Address Line 1</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Address Line 1"
+                                                   formControlName="address_1">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Address Line 2</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Address Line 2"
+                                                   formControlName="address_2">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">City</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="City"
+                                                   formControlName="city">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">State</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="State"
+                                                   formControlName="state">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Zip Code</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Zip Code"
+                                                   formControlName="zip_code">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Country</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="country"
+                                                   formControlName="country">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Disability</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Disability"
+                                                   formControlName="disability">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Ethnicity</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Ethnicity"
+                                                   formControlName="ethnicity">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Smoker</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Smoker"
+                                                   formControlName="smoker">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="projectinput2">Veteran</label>
+                                            <input type="text"
+                                                   id="projectinput2"
+                                                   class="form-control"
+                                                   placeholder="Veteran"
+                                                   formControlName="veteran">
+                                            <!-- <form-error-msg controlName="address_1"></form-error-msg> -->
+                                        </div>
+                                    </div>
+                                  
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <!-- <input type="checkbox"
+                                                   id="active"
+                                                   class="chk-remember" icheck
+                                                   formControlName="is_active">
+                                            <label for="active" style="padding-left: 5px">
+                                                Enable
+                                            </label> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <!-- <input type="checkbox"
+                                                   id="active"
+                                                   class="chk-remember" icheck
+                                                   formControlName="is_active">
+                                            <label for="active" style="padding-left: 5px">
+                                                Enable
+                                            </label> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3 text-right">
+                                        <button type="submit"
+                                                class="btn btn-primary"
+                                                [ladda]="ui.laddaUser">
+                                            <i class="la la-save"></i> Update
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- <form class="form" [formGroup]="pwdForm" (submit)="updatePassword()">
+                                <h4 class="form-section pt-1 mb-0">
+                                    <i class="la la-asterisk"></i> Authentication
+                                </h4>
+
+                                <div class="mb-2">
+                                    <small class="text-muted">
+                                        Password must contain at least 8 characters containing
+                                        alphabets, numbers and special characters.
+                                    </small>
+                                </div>
+
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="form-group">
+                                            <label for="password">New Password</label>
+                                            <input type="password"
+                                                   id="password"
+                                                   class="form-control"
+                                                   placeholder="Password"
+                                                   formControlName="new_password"
+                                                   autocomplete="current-password">
+                                            <form-error-msg controlName="new_password"></form-error-msg>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="form-group">
+                                            <label for="c-password">Confirm password</label>
+                                            <input type="password"
+                                                   id="c-password"
+                                                   class="form-control"
+                                                   placeholder="Confirm password"
+                                                   formControlName="confirm_password">
+                                            <form-error-msg controlName="confirm_password"
+                                                            [message]="{fieldMatchValidator: 'Confirm password does not match with the password'}">
+                                            </form-error-msg>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="la la-unlock-alt"></i> Change password
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form> -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<alert type="danger" *ngIf="ui.hasError">
+    <strong>Opps!</strong> Error while loading user info. Please refresh the page to try again.
+</alert>

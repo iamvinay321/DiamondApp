@@ -1,0 +1,142 @@
+<div class="dataTables_wrapper container-fluid dt-bootstrap4">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="dataTables_length" id="DataTables_Table_0_length">
+                <label>Show
+                    <select name="DataTables_Table_0_length"
+                            aria-controls="DataTables_Table_0"
+                            app-page-size-selector
+                            [(ngModel)]="pageSize"
+                            (change)="loadData()"
+                            style="width: 70px; height: 28px"
+                            class="form-control form-control-sm"></select>
+                    entries
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                <!-- <form (submit)="loadData()">
+                    <label>Search:
+                        <input type="search"
+                               class="form-control form-control-sm"
+                               [(ngModel)]="searchQuery"
+                               [ngModelOptions]="{standalone: true}"
+                               aria-controls="DataTables_Table_0"
+                               placeholder="Employee Name">
+                    </label>
+                </form> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-xl default-ordering dataTable">
+                <thead>
+                <tr>
+                    <th *ngFor="let column of options.columns"
+                        width="{{column.width}}">{{column.title}}
+                    </th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <ng-container *ngIf="!ui.isLoading">
+                    <tr *ngFor="let item of (data|async|get:'items')">
+                        <ng-container *ngFor="let column of options.columns">
+                            
+                            <td class="border-top-0"
+                                *ngIf="getColumnType(column, item)=='sync'"
+                                [innerHTML]="getColumnValue(column, item)">
+                            </td>
+
+                            <td class="border-top-0"
+                                *ngIf="getColumnType(column, item)=='async'"
+                                [innerHTML]="getColumnValue(column, item)|async">
+                            </td>
+                        </ng-container>
+
+                        <td class="border-top-0">
+                            <a [routerLink]="item.id + '/edit'"
+                               *ngIf="options.actions.edit">
+                                <i class="la la-edit"></i>
+                            </a>
+                            
+                            <a [routerLink]="item.id + '/view'"
+                               *ngIf="options.actions.view">
+                                <i class="la la-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </ng-container>
+
+                <tr *ngIf="ui.isLoading">
+                    <td colspan="4"
+                        align="center"
+                        class="border-top-0 pt-5 pb-5">
+                        <i class="feather spinner icon-loader font-medium-5"></i>
+                    </td>
+                </tr>
+
+                <tr *ngIf="!ui.isLoading && (data|async|get:'items.length':0) == 0">
+                    <td colspan="4"
+                        align="center"
+                        class="border-top-0 pt-5 pb-5">
+                        <app-no-data-msg></app-no-data-msg>
+                        <span>
+                            <a routerLink="add"> Click here</a>
+                            to add.
+                        </span>
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="row"
+         *ngIf="!ui.isLoading ">
+        <div class="col-sm-12 col-md-5">
+            <div class="dataTables_info"
+                 id="DataTables_Table_0_info"
+                 role="status"
+                 aria-live="polite">
+                Showing {{(data|async).meta.from}} to
+                {{(data|async).meta.to}} of
+                {{(data|async).meta.count}} entries
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers"
+                 id="DataTables_Table_0_paginate">
+
+                <pagination [boundaryLinks]="false"
+                            [totalItems]="data|async|get:'meta.count'"
+                            [maxSize]="5"
+                            [itemsPerPage]="pageSize"
+                            [disabled]="ui.isLoading"
+                            (pageChanged)="loadData($event.page)"
+                            [(ngModel)]="page"
+                            previousText="Previous"
+                            nextText="Next"
+                            class="pagination float-right"></pagination>
+            </div>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item ">
+                <a class="page-link" *ngIf="previous != null" (click)="loadData(previous)" >Previous{{previous}}</a>
+              </li>
+              <li class="page-item"><a class="page-link" (click)="loadData(1)">1</a></li>
+              <li class="page-item"><a class="page-link" (click)="loadData(2)">2</a></li>
+              <li class="page-item"><a class="page-link" (click)="loadData(3)">3</a></li>
+              <li class="page-item">
+                <a class="page-link" (click)="loadData(next)">Next{{next}}</a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+</div>

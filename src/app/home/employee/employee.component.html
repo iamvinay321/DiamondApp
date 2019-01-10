@@ -1,0 +1,78 @@
+
+<div class="card">
+    <div class="card-content collapse show">
+
+            <div class="card-body card-dashboard">
+                <div class="dataTables_wrapper container-fluid dt-bootstrap4">
+                    <div class="row">
+                        
+        
+             
+                 <div class="col-md-3">
+                        <form (submit)="loadData()">
+                                
+                                    <input type="search"
+                                           class="form-control form-control-sm"
+                                           [(ngModel)]="searchQuery"
+                                           [ngModelOptions]="{standalone: true}"
+                                           aria-controls="DataTables_Table_0"
+                                           placeholder="Market Type">
+                                
+                            </form>
+                 </div>
+                 <div class="col-md-3">
+                        <form (submit)="loadData()">
+                                
+                                    <input type="search"
+                                           class="form-control form-control-sm"
+                                           [(ngModel)]="searchQuery"
+                                           [ngModelOptions]="{standalone: true}"
+                                           aria-controls="DataTables_Table_0"
+                                           placeholder="Available Date">
+                                
+                            </form>
+                 </div>
+                 <div class="col-md-3">
+                        <form (submit)="loadData()">
+                                
+                                    <input type="search"
+                                           class="form-control form-control-sm"
+                                           [(ngModel)]="searchQuery"
+                                           [ngModelOptions]="{standalone: true}"
+                                           aria-controls="DataTables_Table_0"
+                                           placeholder="Has Project / No Project">
+                                
+                            </form>
+             </div>
+             <div class="col-md-3">
+                    <form (submit)="loadData()">
+                            
+                                <input type="search"
+                                       class="form-control form-control-sm"
+                                       [(ngModel)]="searchQuery"
+                                       [ngModelOptions]="{standalone: true}"
+                                       aria-controls="DataTables_Table_0"
+                                       placeholder="Salary at least">
+                            
+                        </form>
+                        
+                        </div>
+                    </div>
+         </div>
+        </div>
+        <div class="card-body card-dashboard">
+                <!-- dataTables_wrapper container-fluid dt-bootstrap4 -->
+            <app-datatableproject [options]="datatableOptions"></app-datatableproject>
+          <!-- Profile data  {{profileData | json}} -->
+        </div>
+    </div>
+</div>
+
+<ng-template #action>
+    <div class="dropdown float-md-right">
+        <button class="btn btn-primary round btn-glow px-2"
+                type="button"
+                (click)="addNew()">Add a Employee
+        </button>
+    </div>
+</ng-template>

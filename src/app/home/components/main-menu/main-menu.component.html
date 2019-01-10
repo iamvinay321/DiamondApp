@@ -1,0 +1,66 @@
+<ng-scrollbar>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main"
+            id="main-menu-navigation"
+            data-menu="menu-navigation">
+
+            <li *ngFor="let menuItem of menuItems"
+                [class.has-sub]="menuItem.subMenu && menuItem.subMenu.length > 0"
+                [class.navigation-header]="menuItem.isHeader"
+                [class.nav-item]="!menuItem.isHeader"
+                routerLinkActive="active open">
+
+                <ng-container *ngIf="menuItem.isHeader">
+                    <span>{{menuItem.title}}</span>
+                </ng-container>
+
+                <ng-container *ngIf="!menuItem.subMenu && menuItem.routerLink">
+                    <a [routerLink]="menuItem.routerLink">
+                        <i class="la {{menuItem.icon}}"></i>
+                        <span class="menu-title">{{menuItem.title}}</span>
+                    </a>
+                </ng-container>
+
+                <ng-container *ngIf="menuItem.subMenu && menuItem.subMenu.length > 0">
+                    <a href="javascript:void(0);">
+                        <i class="la {{menuItem.icon}}"></i>
+                        <span class="menu-title">{{menuItem.title}}</span>
+                    </a>
+
+                    <ul class="menu-content">
+                        <li *ngFor="let subMenuItem of menuItem.subMenu"
+                            [class.has-sub]="subMenuItem.subMenu && subMenuItem.subMenu.length > 0"
+                            routerLinkActive="active open">
+
+                            <ng-container *ngIf="!subMenuItem.subMenu && subMenuItem.routerLink">
+                                <a class="menu-item"
+                                   [routerLink]="subMenuItem.routerLink"> {{subMenuItem.title}}
+                                </a>
+                            </ng-container>
+
+                            <ng-container *ngIf="subMenuItem.subMenu
+                                                    && subMenuItem.subMenu.length > 0">
+
+                                <a class="menu-item"
+                                   href="javascript:void(0);">
+
+                                    {{subMenuItem.title}}
+                                </a>
+
+                                <ul class="menu-content">
+                                    <li *ngFor="let subSubMenuItem of subMenuItem.subMenu"
+                                        routerLinkActive="active open">
+                                        <a class="menu-item"
+                                           [routerLink]="subSubMenuItem.routerLink">
+                                            {{subSubMenuItem.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ng-container>
+                        </li>
+                    </ul>
+                </ng-container>
+            </li>
+        </ul>
+    </div>
+</ng-scrollbar>

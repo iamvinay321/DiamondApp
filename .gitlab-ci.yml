@@ -1,0 +1,35 @@
+image: docker:1
+
+services:
+- docker:dind
+
+stages:
+- build
+- deploy
+
+before_script:
+- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.stickboycreative.com
+- export REGISTRY=registry.stickboycreative.com/diamond/diamond_web
+- docker build . -t $REGISTRY:$CI_BUILD_REF_NAME
+
+Nightly Image:
+  type: build
+  environment: develop
+  tags:
+  - docker
+  except:
+  - tags
+  script:
+  - docker push $REGISTRY:$CI_BUILD_REF_NAME
+
+Release Image:
+  type: build
+  environment: production
+  tags:
+  - docker
+  only:
+  - tags
+  script:
+  - docker tag $REGISTRY:$CI_BUILD_REF_NAME $REGISTRY:latest
+  - docker push $REGISTRY:$CI_BUILD_REF_NAME
+  - docker push $REGISTRY:latest

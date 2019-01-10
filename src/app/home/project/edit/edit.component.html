@@ -1,0 +1,629 @@
+<ng-container *ngIf="!ui.hasError">
+    <div class="card" *blockUI="'ui'">
+        <div class="card-content collapse show">
+            <div class="card-body">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                        <div class="form-body">
+
+                                <form class="form" [formGroup]="projectForm" (submit)="updateProject()">
+                                        <h4 class="form-section">
+                                           <i class="feather icon-file"></i> Project Info
+                                        </h4>
+                                        <div class="row">
+                                           <div class="col-md-4">
+                                              <div class="form-group">
+                                                 <label for="projectinput1">Project Name</label>
+                                                 <input type="text"
+                                                    id="projectinput1"
+                                                    class="form-control"
+                                                    placeholder="Project Name"
+                                                    formControlName="project">
+                                                 <form-error-msg controlName="project"></form-error-msg>
+                                              </div>
+                                           </div>
+                                           <div class="col-md-4">
+                                              <div class="form-group">
+                                                 <label for="projectinput2">System Of Origin</label>
+                                                 <input type="text"
+                                                    id="projectinput2"
+                                                    class="form-control"
+                                                    placeholder="System Of Origin"
+                                                    formControlName="system_of_origin">
+                                                 <form-error-msg controlName="system_of_origin"></form-error-msg>
+                                              </div>
+                                           </div>
+                                           <div class="col-md-4">
+                                              <div class="form-group">
+                                                 <label for="projectinput3">Project Status</label>
+                                                 <input type="text"
+                                                    id="projectinput3"
+                                                    class="form-control"
+                                                    placeholder="Project Status"
+                                                    formControlName="project_status">
+                                                 <form-error-msg controlName="project_status"></form-error-msg>
+                                              </div>
+                                           </div>
+                                           <div class="col-md-4">
+                                              <div class="form-group">
+                                                 <label for="projectinput4">Database Stamp</label>
+                                                 <input type="text"
+                                                    id="projectinput4"
+                                                    class="form-control"
+                                                    placeholder="Database Stamp"
+                                                    formControlName="database_stamp">
+                                                 <form-error-msg controlName="database_stamp"></form-error-msg>
+                                              </div>
+                                           </div>
+                                           <div class="col-md-4">
+                                              <div class="form-group">
+                                                 <label for="projectinput5">Project Number</label>
+                                                 <input type="text"
+                                                    id="projectinput5"
+                                                    class="form-control"
+                                                    placeholder="Project Number"
+                                                    formControlName="project_number"
+                                                    >
+                                                 <!-- <form-error-msg controlName="project_number"></form-error-msg> -->
+                                              </div>
+                                           </div>
+                        
+                                           <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput6">Project Description</label>
+                                               <input type="text"
+                                                  id="projectinput6"
+                                                  class="form-control"
+                                                  placeholder="Project Description"
+                                                  formControlName="project_description">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput7">Project Managers</label>
+                                               <input type="text"
+                                                  id="projectinput7"
+                                                  class="form-control"
+                                                  placeholder="Project Managers"
+                                                  formControlName="project_managers">
+                                               <!-- <form-error-msg controlName="project_managers"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput8">Project Stage</label>
+                                               <input type="text"
+                                                  id="projectinput8"
+                                                  class="form-control"
+                                                  placeholder="Project Stage"
+                                                  formControlName="project_stage">
+                                               <!-- <form-error-msg controlName="project_stage"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput9">Projected Gp</label>
+                                               <input type="number"
+                                                  id="projectinput9"
+                                                  class="form-control"
+                                                  placeholder="Database Stamp"
+                                                  formControlName="projected_gp">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-12 ">
+                                            <div class="hrline">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput10">Procore Index</label>
+                                               <input type="number"
+                                                  id="projectinput10"
+                                                  class="form-control"
+                                                  placeholder="Procore Index"
+                                                  formControlName="procore_index">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-12 ">
+                                            <div class="hrline">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput10">Address</label>
+                                               <input type="text"
+                                                  id="projectinput10"
+                                                  class="form-control"
+                                                  placeholder="Address"
+                                                  formControlName="address">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">City</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="City"
+                                                  formControlName="city">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">state</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="State"
+                                                  formControlName="state">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Zip</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Zip Code"
+                                                  formControlName="zip">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">latitude</label>
+                                               <input type="string"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Latitude"
+                                                  formControlName="latitude"
+                                                  >
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Longitude</label>
+                                               <input type="string"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Longitude"
+                                                  formControlName="longitude"
+                                                  >
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Phone</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Phone Number"
+                                                  formControlName="phone">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-12 ">
+                                            <div class="hrline">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Created</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Created"
+                                                  formControlName="created">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Last Updated</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="last_updated"
+                                                  formControlName="last_updated">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Procore Status</label>
+                                                  <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="procore_status"
+                                                  formControlName="procore_status">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Sage Status</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="sage_status"
+                                                  formControlName="sage_status">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-12 ">
+                                            <div class="hrline">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Customer Id</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Customer Id"
+                                                  formControlName="customer_id">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Customer Name</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Customer Name"
+                                                  formControlName="customer_name">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Architect</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Architect"
+                                                  formControlName="architect">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Division</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Division"
+                                                  formControlName="division">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Contract Type</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Contract Type"
+                                                  formControlName="contract_type">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Team Leader</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Team Leader"
+                                                  formControlName="team_leader">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Project Managers</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Project Managers"
+                                                  formControlName="project_managers">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Superintendents</label>
+                                               <input type="text"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Superintendents"
+                                                  formControlName="superintendents">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Original Contract Value</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Original Contract Value"
+                                                  formControlName="original_contract_value">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Approved Contract Changes</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Approved Contract Changes"
+                                                  formControlName="approved_contract_changes">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Revised Contract Value</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Revised Contract Value"
+                                                  formControlName="revised_contract_value">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-12 ">
+                                            <div class="hrline">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Jtd Work Billed</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Jtd Work Billed"
+                                                  formControlName="jtd_work_billed">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Jtd Retainage Held</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Jtd Retainage Held"
+                                                  formControlName="jtd_retainage_held">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Jtd Payments Received</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Jtd Payments Received"
+                                                  formControlName="jtd_payments_received">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Jtd Cost</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Jtd Cost"
+                                                  formControlName="jtd_cost">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Jtd Payments Made</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Jtd Payments Made"
+                                                  formControlName="jtd_payments_made">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Original Estimated Cost</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Original Estimated Cost"
+                                                  formControlName="original_estimated_cost">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Approved Estimate Changes</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Approved Estimate Changes"
+                                                  formControlName="approved_estimate_changes">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Revised Estimated Cost</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Revised Estimated Cost"
+                                                  formControlName="revised_estimated_cost">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Original Committed Cost</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Original Committed Cost"
+                                                  formControlName="original_committed_cost">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Approved Commitment Changes</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Approved Commitment Changes"
+                                                  formControlName="approved_commitment_changes">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Revised Committed Cost</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Revised Committed Cost"
+                                                  formControlName="revised_committed_cost">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">projected_post</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Projected Post"
+                                                  formControlName="projected_post">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Original Gp</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Original Gp"
+                                                  formControlName="original_gp">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Original Gp Percent</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Original Gp Percent"
+                                                  formControlName="original_gp_percent">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Projected Gp Percent</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Projected Gp Percent"
+                                                  formControlName="projected_gp_percent">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Gain Fade</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Gain Fade"
+                                                  formControlName="gain_fade">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <label for="projectinput3">Gain Fade Percent</label>
+                                               <input type="number"
+                                                  id="projectinput4"
+                                                  class="form-control"
+                                                  placeholder="Gain Fade Percent"
+                                                  formControlName="gain_fade_percent">
+                                               <!-- <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                            <div class="form-group">
+                                               <!-- <label for="projectinput3">database_stamp</label>
+                                                  <input type="text"
+                                                         id="projectinput4"
+                                                         class="form-control"
+                                                         placeholder="Database Stamp"
+                                                         formControlName="database_stamp">
+                                                  <form-error-msg controlName="database_stamp"></form-error-msg> -->
+                                            </div>
+                                         </div>
+                                           
+                                           <!-- <div class="col-9">
+                                              <div class="form-group">
+                                                  <input type="checkbox"
+                                                         id="active"
+                                                         class="chk-remember" icheck
+                                                         formControlName="is_active">
+                                                  <label for="active" style="padding-left: 5px">
+                                                      Enable
+                                                  </label>
+                                              </div>
+                                              </div> -->
+                                           <div class="col-3 text-right">
+                                              <button type="submit"
+                                                 class="btn btn-primary"
+                                                 [ladda]="ui.laddaUser">
+                                              <i class="la la-save"></i> Update
+                                              </button>
+                                           </div>
+                                        </div>
+                                </form>
+                           
+
+                           
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<alert type="danger" *ngIf="ui.hasError">
+    <strong>Opps!</strong> Error while loading user info. Please refresh the page to try again.
+</alert>

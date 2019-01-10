@@ -1,0 +1,222 @@
+<ng-container *ngIf="!ui.hasError">
+    <div class="card" *blockUI="'ui'">
+        <div class="card-content collapse show">
+            <div class="card-body" style="padding-top: 2.5rem">
+                <div class="row">
+                        <div class="col-md-3">
+                                    <!-- <ul class="profile">
+                                        <li>
+                                            <span class="label">Project Name</span>
+                                            |
+                                            <span class="value">Sample Name</span>
+                                        </li>
+                                        <li>
+                                            <span class="label">Job ID </span>
+                                            <span class="value">SP-001</span>
+                                        </li>
+                                        <li>
+                                            <span class="label">Market</span>
+                                            <span class="value">Medical</span>
+                                        </li>
+                                        <li>
+                                            <span class="label">Physical Size</span>
+                                            <span class="value">12000 sq ft</span>
+                                        </li>
+                                        <li>
+                                            <span class="label">Contract Size</span>
+                                            <span class="value">$100000</span>
+                                        </li>
+                                    </ul> -->
+                                    <h3 style="margin-bottom: 1.5rem"><b>Details </b>  </h3> 
+                                    <table class="table table-hover border_color" >
+                                            <thead>
+                                                <tr class="bg_colore">
+                                                        <th scope="col">Project Name</th>
+                                                        <th scope="col">data.project</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                        <td>Job ID</td>
+                                                        <td>sp-001</td>
+                                                    </tr>
+                                                    <tr>
+                                                            <td>Market</td>
+                                                            <td>department</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>Physical Size</td>
+                                                                <td>12000 sq ft</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td>Contract Size</td>
+                                                                    <td>$100000</td>
+                                                                </tr>
+                                            </tbody>
+                                        </table>
+                        </div>
+                            <div class="col-md-5">
+                                   <h3 style="margin-bottom: 1.5rem"> <b>Staffing </b> </h3> 
+                                   <span>
+                                    <div class="progress" style="margin-bottom: 1rem;width: 90%;float: left;">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;height:24px">
+                                        <span class="sr-only">70% Complete</span>
+                                      </div>
+                                      
+                                    </div> </span>
+                                    <span style="margin-left: 30px;font-size: 16px;"> 2/5 </span>
+                                 
+                                <table class="table table-hover border_color" >
+                                    <thead>
+                                        <tr  class="bg_colore">
+                                                <th scope="col">Position</th>
+                                                <th scope="col">Start</th>
+                                                <th scope="col">End</th>
+                                                <th scope="col">Employee Id</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr *ngFor="let assg of assignment">
+                                                <td>{{assg.position}}</td>
+                                                <td>01/01/18</td>
+                                                <td></td>
+                                                <td>{{assg.employee_id}}
+                                                    <span class="blue" *ngIf="assg.employee_id != null "></span>
+                                                    <span class="red" *ngIf="assg.employee_id == null "></span>
+                                                </td>
+                                            </tr>
+                                           
+                                    </tbody>
+                                </table>
+                                <button class="btn addbtn" (click)="open(content)">Add Position </button>
+                            </div>
+                        <div class="col-md-4" style="padding-top: 45px;">
+                                <label> 
+                                        <input type="checkbox" [(ngModel)]="theCheckbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                                            <b style="margin-left: 10px">Match Market </b>  
+                                        
+                                          <span class="checkmark"></span>
+                                </label>
+                                <label style="margin-left: 20px;"> 
+                                        <input type="checkbox" [(ngModel)]="theCheckboxrole"  data-md-icheck (change)="toggleVisibilityRole($event)"/>
+                                       <b style="margin-left: 10px">Match Role </b>  
+                                        
+                                          <span class="checkmark"></span>
+                                </label>
+                                            <!-- <div
+                                            ><b>{{theCheckbox}}</b>
+                                        </div>
+                                          <div><b>{{theCheckboxrole}}</b></div> -->
+                                    <table class="table table-hover border_color">
+                                        <thead>
+                                          <tr  class="bg_colore">
+                                            <th scope="col">Employee</th>
+                                            <th scope="col">Available On</th>
+                                            <th scope="col">Match</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>Alice Aliston</td>
+                                            <td>01/02/18</td>
+                                            <td>78%</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Alice Aliston</td>
+                                            <td>01/02/18</td>
+                                            <td>56%</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                      </table>
+                        </div>
+                        
+                </div>
+
+               
+                      
+                      
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<alert type="danger" *ngIf="ui.hasError">
+    <strong>Opps!</strong> Error while loading user info. Please refresh the page to try again.
+</alert>
+<ng-template #content let-c="close" let-d="dismiss">
+        <form class="form" [formGroup]="projectAssinForm" (submit)="updateProject()">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Add Position</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--  -->
+          
+         
+                <div class="row">
+                   <div class="col-md-12">
+                      <div class="form-group">
+                         <label for="projectinput1">Position</label>
+                         <select formControlName="position" class="form-control">
+                            <option [value]="country.position" *ngFor="let country of countries">             {{country.position}}</option>
+                          </select>
+                         <form-error-msg controlName="position"></form-error-msg>
+                      </div>
+                   </div>
+                   <!-- <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="projectinput2">Employee</label>
+                       <select formControlName="employee_id" class="form-control">
+                          <option [value]="employee.employee_id" *ngFor="let employee of employees">             {{employee.first_name}}</option>
+                        </select>
+                    </div>
+                 </div> -->
+                   <div class="col-md-12">
+                      <div class="form-group">
+                         <label for="projectinput2">Start</label>
+                         <input type="date"
+                            id="projectinput2"
+                            class="form-control"
+                            placeholder="Start"
+                            formControlName="start_date">
+                      </div>
+                   </div>
+                   <div class="col-md-12">
+                      <div class="form-group">
+                         <label for="projectinput3">End</label>
+                         <input type="date"
+                            id="projectinput3"
+                            class="form-control"
+                            placeholder="End"
+                            formControlName="end_date">
+                      </div>
+                   </div>
+                   <!-- <div class="col-md-6">
+                      <div class="form-group">
+                         <label for="projectinput4">Employee Name</label>
+                         <select formControlName="employeeControl" class="form-control">
+                            <option [value]="employee.employee_id" *ngFor="let employee of employees">             {{country.position}}</option>
+                          </select> 
+                         <form-error-msg controlName="employee_id"></form-error-msg>
+                          <form-error-msg controlName="database_stamp"></form-error-msg>
+                      </div>
+                   </div> -->
+                  
+                   
+                </div>
+                
+          <!--  -->
+        </div>
+        <div class="modal-footer ">
+          <button type="submit"
+          
+        class="btn btn-primary"
+        [ladda]="ui.laddaUser">
+    <i class="la la-save"></i> Update
+    </button>
+        </div>
+        </form>
+      </ng-template>

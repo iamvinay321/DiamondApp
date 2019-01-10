@@ -1,0 +1,106 @@
+<div class="card">
+    <div class="card-content collapse show">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3"></div>
+
+                <div class="col-md-6">
+                    <form class="form" [formGroup]="form" (submit)="save()">
+                        <div class="form-body">
+                            <h4 class="form-section"><i class="feather icon-user"></i> About User
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="projectinput1">First Name</label>
+                                        <input type="text"
+                                               id="projectinput1"
+                                               class="form-control form-control-lg"
+                                               placeholder="First Name"
+                                               formControlName="first_name">
+                                        <form-error-msg controlName="first_name"></form-error-msg>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="projectinput2">Last Name</label>
+                                        <input type="text"
+                                               id="projectinput2"
+                                               class="form-control form-control-lg"
+                                               placeholder="Last Name"
+                                               formControlName="last_name">
+                                        <form-error-msg controlName="last_name"></form-error-msg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="form-section pt-1">
+                                <i class="la la-asterisk"></i> Authentication Info
+                            </h4>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text"
+                                       id="email"
+                                       autocomplete="username email"
+                                       class="form-control form-control-lg"
+                                       placeholder="Email address will be used as username"
+                                       name="email"
+                                       formControlName="email">
+                                <form-error-msg controlName="email"></form-error-msg>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password"
+                                               id="password"
+                                               class="form-control form-control-lg"
+                                               placeholder="Password"
+                                               formControlName="password"
+                                               autocomplete="current-password">
+                                        <form-error-msg controlName="password"></form-error-msg>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="c-password">Confirm password</label>
+                                        <input type="password"
+                                               id="c-password"
+                                               class="form-control form-control-lg"
+                                               placeholder="Confirm password"
+                                               formControlName="confirm_password">
+                                        <form-error-msg controlName="confirm_password"
+                                                        [message]="{fieldMatchValidator: 'Confirm password does not match with the password'}">
+                                        </form-error-msg>
+                                    </div>
+                                </div>
+                            </div>
+                            <small class="text-muted">
+                                Password must contain at least 8 characters containing alphabets,
+                                numbers and special characters.
+                            </small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary float-right"
+                                    [ladda]="ui.laddaSave">
+                                <i class="la la-check-square-o"></i> Save
+                            </button>
+
+                            <button type="button" class="btn btn-secondary mr-1 float-right"
+                                    routerLink="/home/user">
+                                <i class="la la-angle-left"></i> Back to list
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-3"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

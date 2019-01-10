@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-content collapse show">
+        <div class="card-body card-dashboard">
+            <app-datatable [options]="datatableOptions"></app-datatable>
+          <!-- Profile data  {{profileData | json}} -->
+        </div>
+    </div>
+</div>
+
+<ng-template #action>
+    <div class="dropdown float-md-right">
+        <button class="btn btn-primary round btn-glow px-2"
+                type="button"
+                (click)="addNew()">Add a User
+        </button>
+    </div>
+</ng-template>
